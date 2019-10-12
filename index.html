@@ -11,51 +11,93 @@
     <title>Learn CS!</title>
 
     <link rel="stylesheet" type="text/css" href="./node_modules/bulma/css/bulma.css">
-
+    <link rel="stylesheet" type="text/css" href="./iframe-css.css">
   </head>
 
   <body>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-menu">
-            <div class="navbar-start">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" style="padding-left: 25px">
+            Home
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Languages
+            </a>
+    
+            <div class="navbar-dropdown">
               <a class="navbar-item">
-                Home
+                English
               </a>
-        
-              <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                  Languages
-                </a>
-        
-                <div class="navbar-dropdown">
-                  <a class="navbar-item">
-                    English
-                  </a>
-                  <a class="navbar-item">
-                    Spanish
-                  </a>
-                  <a class="navbar-item">
-                    Chinese
-                  </a>
-                  <hr class="navbar-divider">
-                  <a class="navbar-item">
-                    Korean
-                  </a>
-                </div>
-              </div>
-            </div>
-        
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <div class="buttons">
-                  <a class="button is-primary">
-                    <strong>About us</strong>
-                  </a>
-                </div>
-              </div>
+              <a class="navbar-item">
+                Spanish
+              </a>
+              <a class="navbar-item">
+                Chinese
+              </a>
+              <a class="navbar-item">
+                Korean
+              </a>
             </div>
           </div>
-        </nav>
+        </div>
+    
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>About us</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-white is-large is-bold">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title hello-world" style="font-size: 96px">
+            Hello, World
+          </h1>
+          <h2 class="subtitle">
+            <!-- Welcome to  -->
+          </h2>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+          <script>
+            // let hellos = ["Hello, world", "Hola Mundo", "مرحبا بالعالم", "Привет, мир", "你好，世界"];
+            var textWrapper = document.querySelector('.hello-world');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({loop: true})
+              .add({
+                targets: '.hello-world .letter',
+                opacity: [0,1],
+                easing: "easeInOutQuad",
+                duration: 2500,
+                delay: (el, i) => 150 * (i+1)
+            }).add({
+                targets: '.hello-world',
+                opacity: 0,
+                duration: 1500,
+                easing: "easeOutExpo",
+                delay: 4000
+            });
+          </script>
+        </div>
+
+      </div>
+    </section>
+    <section class="section is-medium">
+      <div class="content">
+          <iframe style="height: 800px; width: 80%; margin-left: auto; margin-right: auto; border: none; position: absolute" src="https://repl.it/repls/SeagreenWeightyLight?lite=true" 
+          scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" 
+          sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+      </div>
+    </section>
+
 
 
   </body>
